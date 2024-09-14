@@ -1,24 +1,11 @@
-# vue-app
+## install router
+## install bootstrap and bootstrap-vue
+## start json server  npx json-server db.json
+## install axios
+```bash
+npm install axios
+```
+[https://github.com/typicode/json-server](https://github.com/typicode/json-server)
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## validate form
+[https://vee-validate.logaretm.com/v4/guide/components/handling-forms/](https://vee-validate.logaretm.com/v4/guide/components/handling-forms/)

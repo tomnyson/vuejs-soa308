@@ -1,0 +1,147 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "id": "0729",
+      "username": "user",
+      "password": "123456"
+    },
+    {
+      "id": "037a",
+      "username": "user1",
+      "password": "123456"
+    },
+    {
+      "id": "3bd9",
+      "username": "user1",
+      "password": "123456"
+    },
+    {
+      "id": "cfbd",
+      "username": "123131",
+      "password": "3131"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "title": "Product 1",
+      "price": 10.99,
+      "category": "Electronics",
+      "description": "A great electronic product for everyday use.",
+      "quantity": 50,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": "2",
+      "title": "Product 2",
+      "price": 20.99,
+      "category": "Home Appliances",
+      "description": "An essential home appliance to simplify your life.",
+      "quantity": 30,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": "3",
+      "title": "Product 3",
+      "price": 30.99,
+      "category": "Books",
+      "description": "A best-selling book to enlighten your mind.",
+      "quantity": 100,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": "4",
+      "title": "Product 4",
+      "price": 40.99,
+      "category": "Fashion",
+      "description": "A stylish clothing item for every occasion.",
+      "quantity": 25,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": "5",
+      "title": "Product 5",
+      "price": 50.99,
+      "category": "Toys",
+      "description": "A fun toy to keep children entertained for hours.",
+      "quantity": 75,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": "6",
+      "title": "Product 6",
+      "price": 60.99,
+      "category": "Fitness",
+      "description": "A fitness product to help you stay in shape.",
+      "quantity": 40,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": "7",
+      "title": "Product 7",
+      "price": 70.99,
+      "category": "Beauty",
+      "description": "A beauty product to enhance your daily routine.",
+      "quantity": 60,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": "8",
+      "title": "Product 8",
+      "price": 80.99,
+      "category": "Automotive",
+      "description": "An automotive accessory to upgrade your vehicle.",
+      "quantity": 15,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": "9",
+      "title": "Product 9",
+      "price": 90.99,
+      "category": "Garden",
+      "description": "A useful gardening tool to keep your garden beautiful.",
+      "quantity": 35,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": "10",
+      "title": "Product 10",
+      "price": 100.99,
+      "category": "Pets",
+      "description": "A product for your pet's comfort and enjoyment.",
+      "quantity": 80,
+      "image": "https://picsum.photos/200"
+    }
+  ]
+}
