@@ -43,7 +43,8 @@ export default {
       count: 0,
       isShow: true,
       type: 'B',
-      search: 'tim kiem'
+      search: 'tim kiem',
+      DTB: 0
     }
   },
   methods: {
@@ -93,6 +94,21 @@ export default {
         </div>
       </div>
     </div>
+  </div>
+  <input type="text mb-3" class="form-control" v-model="DTB" />
+  <h3 v-show="isShow">hien thi text here</h3>
+  {{ DTB }}
+  <div v-if="DTB > 8">
+    HSG
+  </div>
+  <div v-else-if="DTB > 7">
+    HSK
+  </div>
+  <div v-else-if="DTB > 5">
+    HSTB
+  </div>
+  <div v-else>
+    HSY
   </div>
 </template>
 
