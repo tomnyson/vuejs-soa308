@@ -4,6 +4,7 @@ import TheWelcome from './components/TheWelcome.vue'
 import XuatThongTin from './components/XuatThongTin.vue';
 import PostList from './components/PostList.vue';
 import DemoCompositionAPI from './components/DemoCompositionAPI.vue';
+import QuanLyCongViec from './components/QuanLyCongViec.vue';
 </script>
 
 <template>
@@ -11,7 +12,8 @@ import DemoCompositionAPI from './components/DemoCompositionAPI.vue';
     <!-- <HelloWorld msg="Hello tomnyson!" />
       <XuatThongTin mssv="pk001" ten="Lê Hồng Sơn" lop="soa308" /> -->
     <!-- <PostList /> -->
-    <DemoCompositionAPI />
+    <!-- <DemoCompositionAPI /> -->
+    <QuanLyCongViec />
   </div>
 </template>
 

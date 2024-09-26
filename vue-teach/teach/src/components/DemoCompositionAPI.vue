@@ -61,6 +61,7 @@ export default {
     <h3>Email: {{ state.user.email }}</h3>
     <h4>Hôm nay bạn nghỉ gì ? <i @click="updateStatus" class="bi bi-pen icon_click"></i></h4>
     <h5>{{ state.user.ghichu }}</h5>
+    <h2>Danh sách công việc</h2>
 </template>
 
 <style scoped>
