@@ -5,6 +5,7 @@ import XuatThongTin from './components/XuatThongTin.vue';
 import PostList from './components/PostList.vue';
 import DemoCompositionAPI from './components/DemoCompositionAPI.vue';
 import QuanLyCongViec from './components/QuanLyCongViec.vue';
+import LifeCycle from './components/LifeCycle.vue';
 </script>
 
 <template>
@@ -13,7 +14,8 @@ import QuanLyCongViec from './components/QuanLyCongViec.vue';
       <XuatThongTin mssv="pk001" ten="Lê Hồng Sơn" lop="soa308" /> -->
     <!-- <PostList /> -->
     <!-- <DemoCompositionAPI /> -->
-    <QuanLyCongViec />
+    <!-- <QuanLyCongViec /> -->
+    <LifeCycle />
   </div>
 </template>
 
