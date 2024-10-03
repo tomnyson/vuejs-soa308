@@ -8,5 +8,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./assets/styles.css"
 import "./assets/js/scripts"
+import router from './route'
 
-createApp(App).mount('#app')
+createApp(App).use(router).mount('#app')
