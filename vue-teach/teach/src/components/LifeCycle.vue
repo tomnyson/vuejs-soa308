@@ -28,7 +28,6 @@ export default {
                     // always executed
                 })
         })
-
         return { loading, posts }
     }
 }
