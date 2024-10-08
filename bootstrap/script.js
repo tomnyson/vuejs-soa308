@@ -32,7 +32,7 @@ const renderPostList = () => {
     let result = "";
     for(const item of dsSinhVien) {
         result+= `
-                <div class="col-md-3">
+          <div class="col-md-3">
           <div class="card" style="width:20rem;margin:20px 0 24px 0">
             <img class="card-img-top" src="${item.picture}" alt="image" style="width:100%" />
             <div class="card-body">
