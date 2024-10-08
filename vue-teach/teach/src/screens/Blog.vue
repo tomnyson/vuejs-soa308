@@ -1,134 +1,113 @@
-<script setup>
-import Navigation from '../components/Navigation.vue';
-import homeBg from '../assets/img/home-bg.jpg'
-import { ref } from 'vue';
-</script>
 <script>
-// export default {
-//     setup() {
-//         // const home = ref(homeBg)
-//     }
-// }
+import Navigation from '../components/Navigation.vue'
+import homeBg from '../assets/img/home-bg.jpg'
+import { ref, reactive, onMounted } from 'vue'
+import axios from 'axios'
+export default {
+  setup() {
+    const loading = ref(false)
+    const posts = reactive([])
 
+    onMounted(() => {
+      const url = 'http://localhost:3000/blogs'
+      axios
+        .get(url)
+        .then((response) => {
+          console.log(response)
+
+          if (response.status === 200) {
+            loading.value = false
+            posts.push(...response.data)
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching posts:', error)
+          // Handle error appropriately
+        })
+    })
+
+    return {
+      loading,
+      posts
+    }
+  }
+}
 </script>
 <template>
-    <!-- Navigation-->
-    <Navigation />
-    <!-- Page Header-->
-    <header class="masthead" :style="{ backgroundImage: `url(${homeBg})` }">
-        <div class="container position-relative px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-                    <div class="site-heading">
-                        <h1>Clean Blog</h1>
-                        <span class="subheading">A Blog Theme by Start Bootstrap</span>
-                    </div>
-                </div>
-            </div>
+  <!-- Navigation-->
+  <Navigation />
+  <!-- Page Header-->
+  <header class="masthead" :style="{ backgroundImage: `url(${homeBg})` }">
+    <div class="container position-relative px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <div class="site-heading">
+            <h1>test</h1>
+            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+          </div>
         </div>
-    </header>
-    <!-- Main Content-->
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <!-- Post preview-->
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                        <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
-                    </a>
-                    <p class="post-meta">
-                        Posted by
-                        <a href="#!">Start Bootstrap</a>
-                        on September 24, 2023
-                    </p>
-                </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-                <!-- Post preview-->
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">I believe every human has a finite number of heartbeats. I don't
-                            intend to waste any of mine.</h2>
-                    </a>
-                    <p class="post-meta">
-                        Posted by
-                        <a href="#!">Start Bootstrap</a>
-                        on September 18, 2023
-                    </p>
-                </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-                <!-- Post preview-->
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">Science has not yet mastered prophecy</h2>
-                        <h3 class="post-subtitle">We predict too much for the next year and yet far too little for
-                            the next ten.</h3>
-                    </a>
-                    <p class="post-meta">
-                        Posted by
-                        <a href="#!">Start Bootstrap</a>
-                        on August 24, 2023
-                    </p>
-                </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-                <!-- Post preview-->
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">Failure is not an option</h2>
-                        <h3 class="post-subtitle">Many say exploration is part of our destiny, but it’s actually our
-                            duty to future generations.</h3>
-                    </a>
-                    <p class="post-meta">
-                        Posted by
-                        <a href="#!">Start Bootstrap</a>
-                        on July 8, 2023
-                    </p>
-                </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-                <!-- Pager-->
-                <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older
-                        Posts →</a></div>
-            </div>
-        </div>
+      </div>
     </div>
-    <!-- Footer-->
-    <footer class="border-top">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-                    <ul class="list-inline text-center">
-                        <li class="list-inline-item">
-                            <a href="#!">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2023</div>
-                </div>
-            </div>
+  </header>
+  <!-- Main Content-->
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <h1 v-if="loading">Loading ...</h1>
+
+        <!-- Post preview-->
+        <div class="post-preview" v-for="item in posts" :key="item.id" >
+            <router-link :to="`/blogs/${item.id}`"> <h2 class="post-title">{{item.title}}</h2></router-link>
+            <h3 class="post-subtitle">{{ item.content.substring(0, 100) }}...</h3>
+          <p class="post-meta">
+            Posted by
+            <a href="#!">Start Bootstrap</a>
+            on September 24, 2023
+          </p>
         </div>
-    </footer>
+        <!-- Pager-->
+        <div class="d-flex justify-content-end mb-4">
+          <a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer-->
+  <footer class="border-top">
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#!">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#!">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#!">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <div class="small text-center text-muted fst-italic">
+            Copyright &copy; Your Website 2023
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </template>

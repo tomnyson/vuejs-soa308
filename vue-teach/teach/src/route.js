@@ -6,12 +6,17 @@ import BlogDetail from './screens/BlogDetail.vue';
 // dinh nghia routing
 const routes = [
     {
-        path: '',
+        path: '/',
         name: 'home',
         component: Blog,
     },
     {
-        path: '/detail',
+        path: '/blogs',
+        name: 'blogs',
+        component: Blog,
+    },
+    {
+        path: '/blogs/:id',
         name: 'detail',
         component: BlogDetail,
     }

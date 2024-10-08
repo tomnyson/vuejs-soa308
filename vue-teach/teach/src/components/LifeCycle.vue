@@ -12,20 +12,13 @@ export default {
             axios
                 .get(url)
                 .then(function (response) {
-                    // handle success
                     loading.value = false;
-                    // let postLists = [..posts].concat(response.data)
-                    // console.log(postLists)
                     posts.push(...response.data)
-                    // posts = tempPosts
-                    // console.log(response.data)
                 })
                 .catch(function (error) {
-                    // handle error
                     console.log(error)
                 })
                 .finally(function () {
-                    // always executed
                 })
         })
         return { loading, posts }

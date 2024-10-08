@@ -143,5 +143,21 @@
       "quantity": 80,
       "image": "https://picsum.photos/200"
     }
+  ],
+  "blogs": [
+    {
+      "id": "1",
+      "image": "https://images2.thanhnien.vn/528068263637045248/2024/10/7/photo-1728327194986-1728327196315918342522.jpeg",
+      "title": "a title",
+      "content": "lễ đón chính thức Tổng Bí thư, Chủ tịch nước Tô Lâm và Đoàn đại biểu cấp cao VN thăm chính thức Cộng hòa Pháp, theo lời mời của Tổng thống Emmanuel Macron, được tổ chức trọng thể theo nghi thức quốc gia tại Điện Invalides ở thủ đô Paris. Sau lễ đón trọng thể, trưa cùng ngày tại Điện Elysée, Paris, Tổng Bí thư, Chủ tịch nước Tô Lâm đã hội đàm với Tổng thống Emmanuel Macron.",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "image": "https://images2.thanhnien.vn/528068263637045248/2024/10/7/photo-1728327210322-1728327210620119704864.jpeg",
+      "content": "Việc nâng cấp quan hệ phù hợp mong muốn của hai nước Tổng Bí thư",
+      "views": 200
+    }
   ]
 }
