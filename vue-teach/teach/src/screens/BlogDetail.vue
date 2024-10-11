@@ -1,38 +1,61 @@
 <script>
-import { ref, onMounted, reactive } from 'vue'
-import { useRoute } from 'vue-router'
-import axios from 'axios'
-import homeBg from '../assets/img/home-bg.jpg'
+import { ref, onMounted, reactive } from 'vue';
+import { useRoute } from 'vue-router';
+import axios from 'axios';
+import homeBg from '../assets/img/home-bg.jpg';
+import Navigation from '../components/Navigation.vue';
+import { QuillEditor } from '@vueup/vue-quill'
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
+
 export default {
+  components: {
+    Navigation,
+    QuillEditor
+  },
+
   setup() {
-    const route = useRoute()
-    const post = reactive({})
-    const loading = ref(true)
+    const route = useRoute();
+    const post = reactive({});
+    const loading = ref(true);
+    const comment = ref('add your comment')
 
     onMounted(async () => {
       try {
-        const id = route.params.id
-        console.log('will get id', route.params.id)
-        const response = await axios.get(`http://localhost:3000/blogs/${id}`)
-        console.log(response)
-        if(response.status == 200) {
-            console.log(response.data)
-            // post = response.data
-            Object.assign(post,response.data)
+        const id = route.params.id;
+        console.log('will get id', route.params.id);
+        const response = await axios.get(`http://localhost:3000/blogs/${id}`);
+        console.log(response);
+        if (response.status === 200) {
+          console.log(response.data);
+          Object.assign(post, response.data);
         }
       } catch (e) {
-        console.error(e)
+        console.error(e);
       } finally {
-        loading.value = false
+        loading.value = false;
       }
-    })
+    });
 
     return {
-        post, loading
-    }
-  }
-}
+      post,
+      loading,
+      homeBg,
+      editorOptions: {
+        theme: 'snow', // Quill themes: 'snow', 'bubble'
+        modules: {
+          toolbar: [
+            [{ header: [1, 2, false] }],
+            ['bold', 'italic', 'underline'],
+            ['link', 'image'],
+          ],
+        },
+      },
+      comment
+    };
+  },
+};
 </script>
+
 <template>
   <!-- Navigation-->
   <Navigation />
@@ -42,8 +65,8 @@ export default {
       <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-md-10 col-lg-8 col-xl-7">
           <div class="site-heading">
-            <h1> {{ post.title }}</h1>
-            <span class="subheading">   {{ post.title }}</span>
+            <h1>{{ post.title }}</h1>
+            <span class="subheading">{{ post.title }}</span>
           </div>
         </div>
       </div>
@@ -54,8 +77,28 @@ export default {
     <div class="container px-4 px-lg-5">
       <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-md-10 col-lg-8 col-xl-7">
-          <!-- <p v-if="loading">load</p> -->
-          {{ post.content }}
+          <!-- Post Content -->
+          <p v-if="loading">Loading...</p>
+          <div v-else>
+            {{ post.content }}
+            <!-- Correctly using QuillEditor component -->
+            <QuillEditor v-model="comment" :options="editorOptions" placeholder="add your comment" />
+          </div>
+          <!-- Comment form -->
+          <!-- <form @submit.prevent="onSubmit">
+            <div class="mb-3 mt-5">
+              <textarea
+                v-model="email"
+                type="email"
+                class="form-control"
+                id="username"
+                placeholder="Enter your comment"
+              ></textarea>
+              <button type="submit" class="btn btn-primary mt-3">
+                Comment
+              </button>
+            </div>
+          </form> -->
         </div>
       </div>
     </div>

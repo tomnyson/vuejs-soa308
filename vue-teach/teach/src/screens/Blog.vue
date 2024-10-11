@@ -4,6 +4,9 @@ import homeBg from '../assets/img/home-bg.jpg'
 import { ref, reactive, onMounted } from 'vue'
 import axios from 'axios'
 export default {
+  components: {
+    Navigation,
+  },
   setup() {
     const loading = ref(false)
     const posts = reactive([])
@@ -28,7 +31,8 @@ export default {
 
     return {
       loading,
-      posts
+      posts,
+      homeBg
     }
   }
 }

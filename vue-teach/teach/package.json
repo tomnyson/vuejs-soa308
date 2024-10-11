@@ -11,12 +11,16 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-vue": "^7.2.0",
+    "@vueup/vue-quill": "^1.2.0",
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "bootstrap-vue": "^2.23.1",
+    "ckeditor5": "^43.2.0",
     "vue": "^3.4.29",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.4.5",
+    "vue3-quill": "^0.3.1"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",

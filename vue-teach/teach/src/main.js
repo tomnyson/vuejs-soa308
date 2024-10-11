@@ -9,5 +9,4 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./assets/styles.css"
 import "./assets/js/scripts"
 import router from './route'
-
 createApp(App).use(router).mount('#app')
