@@ -11,6 +11,7 @@ export default {
         const onSubmit = async () => {
             const response = await axios.get(`http://localhost:3000/users?email=${email.value}&password=${password.value}`)
             if(response.data.length > 0) {
+                
                 localStorage.setItem('user', JSON.stringify(response.data[0]));
                 alert("dang nhap thanh cong")
                 router.push({name: 'blogs'})

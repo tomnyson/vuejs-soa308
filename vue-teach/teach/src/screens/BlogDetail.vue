@@ -18,7 +18,8 @@ export default {
     const post = reactive({});
     const loading = ref(true);
     const comment = ref('add your comment')
-
+    const currentUser = reactive({});
+    const isLogin = ref(false);
     onMounted(async () => {
       try {
         const id = route.params.id;
@@ -29,6 +30,12 @@ export default {
           console.log(response.data);
           Object.assign(post, response.data);
         }
+        // check auth
+        const user = localStorage.getItem('user')
+        if(user) {
+          Object.assign(currentUser, JSON.parse(user));
+          isLogin.value = true;
+        }
       } catch (e) {
         console.error(e);
       } finally {
@@ -38,7 +45,9 @@ export default {
 
     return {
       post,
+      currentUser,
       loading,
+      isLogin,
       homeBg,
       editorOptions: {
         theme: 'snow', // Quill themes: 'snow', 'bubble'
@@ -82,7 +91,11 @@ export default {
           <div v-else>
             {{ post.content }}
             <!-- Correctly using QuillEditor component -->
-            <QuillEditor v-model="comment" :options="editorOptions" placeholder="add your comment" />
+             <h2>current User: {{ currentUser?.name }}</h2>
+             <div v-if="isLogin" >
+              <QuillEditor v-model="comment" :options="editorOptions" placeholder="add your comment" />
+             </div>
+          
           </div>
           <!-- Comment form -->
           <!-- <form @submit.prevent="onSubmit">

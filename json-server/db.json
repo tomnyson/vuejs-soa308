@@ -28,28 +28,64 @@
   },
   "users": [
     {
-      "username": "admin",
-      "password": "admin"
+      "id": "366b",
+      "name": "1",
+      "email": "tablekindfire@gmail.com",
+      "password": "1"
     },
     {
-      "id": "0729",
-      "username": "user",
+      "id": "7d7e",
+      "name": "admin",
+      "email": "tablekindfire1@gmail.com",
       "password": "123456"
     },
     {
-      "id": "037a",
-      "username": "user1",
+      "id": "9ae7",
+      "name": "admin",
+      "email": "tablekindfire2@gmail.com",
       "password": "123456"
     },
     {
-      "id": "3bd9",
-      "username": "user1",
+      "id": "0338",
+      "name": "admin",
+      "email": "tablekindfire3@gmail.com",
       "password": "123456"
     },
     {
-      "id": "cfbd",
-      "username": "123131",
+      "id": "3979",
+      "name": "adad",
+      "email": "tablekindfire33@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "3171",
+      "name": "adad",
+      "email": "tablekindfire3131@gmail.com",
+      "password": "31313"
+    },
+    {
+      "id": "f6d8",
+      "name": "ada",
+      "email": "tablekindfire3313131@gmail.com",
+      "password": "313131"
+    },
+    {
+      "id": "db08",
+      "name": "1231",
+      "email": "3131313@gmail.com",
       "password": "3131"
+    },
+    {
+      "id": "c0a0",
+      "name": "newlogin",
+      "email": "newlogin@gmail.com",
+      "password": "abc123"
+    },
+    {
+      "id": "edb4",
+      "name": "dat123456789",
+      "email": "thanhdat123456@gmail.com",
+      "password": "dat12345"
     }
   ],
   "products": [
